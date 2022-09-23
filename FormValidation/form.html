@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Form Validation</title>
+</head>
+<body>
+    <div class="container">
+        <div class="child">
+            <form action="" onsubmit="return Validation()" class="form">
+                <div>
+                    <label for="firstName">FirstName: </label><br>
+                    <input type="text" id="firstName" autocomplete="off">
+                    <span id="error-firstName" class="error"></span>
+                </div>
+
+                <div>
+                    <label for="lastName">LastName</label><br>
+                    <input type="text" id="lastName" autocomplete="off">
+                </div>
+
+                <div>
+                    <label for="email">Email</label><br>
+                    <input type="text" id="email" autocomplete="off">
+                </div>
+
+                <div>
+                    <label for="password">Password</label><br>
+                    <input type="password" id="password">
+                </div>
+
+                <div>
+                    <button class="btn-submit">Submit</button>
+                </div> 
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function Validation(){
+            var firstName = document.getElementById('firstName').value;
+
+            if(firstName == ''){
+                document.getElementById('error-firstName').innerText = "*FirstName Required";
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
